@@ -36,7 +36,7 @@
     <script>
   
         //Variavel que recebe a data e hora do ultimo retrabalho
-        let dataUsuario = moment('04/04/2023 08:30:00', 'DD-MM-YYYY HH:mm:ss');
+        let dataUsuario = moment('04/04/2023 10:30:00', 'DD-MM-YYYY HH:mm:ss');
       
         let agora = moment(); // pega a data e hora atual
     
@@ -54,9 +54,9 @@
       }
       setInterval(getTime, 1000); // atualiza a cada segundo
       
-      setTimeout(function() {
-      window.location.reload(1);
-       }, 180000); // 3 minutos
+       setTimeout(() => {
+      document.location.reload();
+     }, 180000);// 3 minutos
     </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
