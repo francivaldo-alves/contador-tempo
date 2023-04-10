@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <meta charset="UTF-8"/>
+  <head>
+    <title>Painel Retrabalho</title>
+    <!-- Adicionar o link para o arquivo CSS do Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+
+    <style>
+   
+      html,
+      body {
+        height: 100%;
+      }
+     
+      .centralizar {
+        height: 100%;
+        color: #00008b;
+        font-size: larger;
+        border:1%;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <!-- Div que será centralizada -->
+    <div class="d-flex justify-content-center align-items-center centralizar">
+      <h1 id="contador"></h1>
+    </div>
+
+    <!-- Adicionar o link para o arquivo JavaScript do Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      function getTime() {
+        
+        //Variavel que recebe a data e hora do ultimo retrabalho
+        let dataUsuario = moment('10/04/2023 18:45:00', 'DD-MM-YYYY HH:mm:ss');
+      
+        let agora = moment(); // pega a data e hora atual
+    
+        let diferenca = moment.duration(agora.diff(dataUsuario)); // calcula a diferença em dias
+       
+       let dias = diferenca.days(); 
+         let horas = diferenca.hours(); 
+        let minutos = diferenca.minutes(); 
+        let segundos = diferenca.seconds(); 
+
+        let frase = "Estamos há " + dias + " dias, " + horas + " horas, " +  minutos + " minutos e " + segundos +
+          " segundos sem abrir um novo retrabalho!"; // concatena a frase com os valores do contador
+
+        document.getElementById("contador").innerHTML = frase; // atualiza o elemento HTML com a frase
+      }
+      setInterval(getTime, 1000); // atualiza a cada segundo
+    </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  </body>
+</html>
