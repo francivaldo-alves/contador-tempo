@@ -37,19 +37,27 @@
       function getTime() {
         
         //Variavel que recebe a data e hora do ultimo retrabalho
-        let dataUsuario = moment('05/04/2023 14:43:00', 'DD-MM-YYYY HH:mm:ss');
+        let dataUsuario = moment('13/04/2023 18:09:00', 'DD-MM-YYYY HH:mm:ss');
+
+        let penultimoRetrabalho = moment('05/04/2023 14:43:00', 'DD-MM-YYYY HH:mm:ss');
+
       
         let agora = moment(); // pega a data e hora atual
     
         let diferenca = moment.duration(agora.diff(dataUsuario)); // calcula a diferença em dias
+        let recorde = moment.duration(dataUsuario.diff(penultimoRetrabalho)); // calcula a diferença em dias
+
        
        let dias = diferenca.days(); 
          let horas = diferenca.hours(); 
         let minutos = diferenca.minutes(); 
         let segundos = diferenca.seconds(); 
 
+        let recordeDia = recorde.days();
+        let recordeHora = recorde.hours();
+
         let frase = "Estamos há " + dias + " dias, " + horas + " horas, " +  minutos + " minutos e " + segundos +
-          " segundos sem abrir um novo retrabalho!"; // concatena a frase com os valores do contador
+          " segundos sem abrir um novo retrabalho! <br/><br/> O recorde atual é de " + recordeDia + " dias e " + recordeHora + " horas! " ; // concatena a frase com os valores do contador
 
         document.getElementById("contador").innerHTML = frase; // atualiza o elemento HTML com a frase
       }
