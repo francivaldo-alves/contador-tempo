@@ -63,7 +63,9 @@
 
         let frase = "Estamos há " + dias + " dias, " + horas + " horas, " +  minutos + " minutos e " + segundos +
           " segundos sem abrir um novo retrabalho de manutenção!"; //<br/><br/> O recorde atual é de " + recordeDia + " dias e " + recordeHora + " horas! " ; // concatena a frase com os valores do contador
-
+        
+        let frase = "Nosso Record Atual é de 12:00:00 ";
+        
         document.getElementById("contador").innerHTML = frase; // atualiza o elemento HTML com a frase
       }
       setInterval(getTime, 1000); // atualiza a cada segundo
